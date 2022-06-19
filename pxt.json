@@ -1,20 +1,19 @@
 {
-    "name": "Pen",
-    "description": "",
+    "name": "makecodearcadepenextension",
     "dependencies": {
         "device": "*"
     },
     "files": [
-        "main.blocks",
-        "main.ts",
+        ".vscode/settings.json",
+        ".vscode/tasks.json",
         "README.md",
         "assets.json",
+        "main.blocks",
+        "main.ts",
+        "test.ts",
         "tilemap.g.jres",
         "tilemap.g.ts",
-        null
-    ],
-    "testFiles": [
-        "test.ts"
+        "tsconfig.json"
     ],
     "targetVersions": {
         "target": "1.8.26",
