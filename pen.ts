@@ -1,13 +1,11 @@
+//% color="#ffa303" 
+//% weight=95
+//% icon="\uf1fc"
+//% block="Pen"
 namespace penExtension {
-    export function pen_colour() {
-        return penColour
-    }
-    export function pen_size() {
-        return penSize
-    }
-    export function Pen_go_to(sprite: Sprite) {
-        Set_pen_position_to(sprite.x, sprite.y)
-    }
+    //% block="set pen position to $x $y"
+    //% blockId=set_pen_pos
+    //% weight=100
     export function Set_pen_position_to(x: number, y: number) {
         distance = Math.sqrt((penX - x) * (penX - x) + (penY - y) * (penY - y))
         if (penDown) {
@@ -22,17 +20,56 @@ namespace penExtension {
         penX = x
         penY = y
     }
+
+    //% block="pen go to $sprite"
+    //% blockId=pen_go_to_sprite
+    //% weight=95
+    //% sprite.shadow=variables_get
+    //% sprite.defl=mySprite
+    export function Pen_go_to(sprite: Sprite) {
+        Set_pen_position_to(sprite.x, sprite.y)
+    }
+
+    //% block="pen down"
+    //% blockId=pen_down
+    //% weight=90
     export function Pen_down() {
         penDown = true
         penImage.fillRect(penX, penY, penSize, penSize, penColour)
     }
-    export function Set_pen_colour_to(colour: number) {
-        penColour = colour
-    }
+
+    //% block="pen up"
+    //% blockId=pen_up
+    //% weight=85
     export function Pen_up() {
         penDown = false
     }
+
+    //% block="set pen size to $size"
+    //% blockId=set_pen_size
+    //% weight=80
     export function Set_pen_size_to(size: number) {
         penSize = Math.constrain(size, 1, 100)
+    }
+
+    //% block="set pen colour to $colour"
+    //% blockId=set pen colour
+    //% weight=75
+    export function Set_pen_colour_to(colour: number) {
+        penColour = colour
+    }
+
+    //% block="pen size"
+    //% blockId=pen_size_reporter
+    //% weight=10
+    export function pen_size() {
+        return penSize
+    }
+
+    //% block="pen colour"
+    //% blockId=pen_colour_reporter
+    //% weight=5
+    export function pen_colour() {
+        return penColour
     }
 }
