@@ -6,6 +6,8 @@ namespace penExtension {
     //% block="set pen position to $x $y"
     //% blockId=set_pen_pos
     //% weight=100
+    //% x.defl=80
+    //% y.defl=60
     export function Set_pen_position_to(x: number, y: number) {
         distance = Math.sqrt((penX - x) * (penX - x) + (penY - y) * (penY - y))
         if (penDown) {
@@ -48,6 +50,7 @@ namespace penExtension {
     //% block="set pen size to $size"
     //% blockId=set_pen_size
     //% weight=80
+    //% size.defl=2
     export function Set_pen_size_to(size: number) {
         penSize = Math.constrain(size, 1, 100)
     }
@@ -55,6 +58,7 @@ namespace penExtension {
     //% block="set pen colour to $colour"
     //% blockId=set pen colour
     //% weight=75
+    //% colour.defl=1
     export function Set_pen_colour_to(colour: number) {
         penColour = colour
     }
