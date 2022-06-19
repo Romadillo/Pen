@@ -13,7 +13,8 @@
         "test.ts",
         "tilemap.g.jres",
         "tilemap.g.ts",
-        "tsconfig.json"
+        "tsconfig.json",
+        "pen.ts"
     ],
     "targetVersions": {
         "target": "1.8.26",
@@ -22,5 +23,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }

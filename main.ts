@@ -2,48 +2,12 @@ namespace SpriteKind {
     export const Pen = SpriteKind.create()
     export const penLayer = SpriteKind.create()
 }
-function Pen_Up () {
-    penDown = false
-}
-function Pen_go_to (sprite: Sprite) {
-    Set_pen_position_to(sprite.x, sprite.y)
-}
-function pen_colour () {
-    return penColour
-}
-function pen_size () {
-    return penSize
-}
-function Set_pen_position_to (x: number, y: number) {
-    distance = Math.sqrt((penX - x) * (penX - x) + (penY - y) * (penY - y))
-    if (penDown) {
-        tempX = penX
-        tempY = penY
-        for (let index = 0; index < Math.ceil(distance); index++) {
-            penImage.fillRect(tempX, tempY, penSize, penSize, penColour)
-            tempX += (x - penX) / Math.ceil(distance)
-            tempY += (y - penY) / Math.ceil(distance)
-        }
-    }
-    penX = x
-    penY = y
-}
-function Pen_Down () {
-    penDown = true
-    penImage.fillRect(penX, penY, penSize, penSize, penColour)
-}
-function Set_pen_colour_to (colour: number) {
-    penColour = colour
-}
-function Set_pen_size_to (size: number) {
-    penSize = Math.constrain(size, 1, 100)
-}
 let tempY = 0
 let tempX = 0
+let penDown = false
 let distance = 0
 let penSize = 0
 let penColour = 0
-let penDown = false
 let penY = 0
 let penX = 0
 let penImage: Image = null
