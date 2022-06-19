@@ -179,6 +179,8 @@ namespace penExtension {
     //% blockId=set_pen_size
     //% weight=80
     //% size.defl=2
+    //% size.min=0.1
+    //% size.max=100
     export function Set_pen_size_to(size: number) {
         penSize = Math.constrain(size, 1, 100)
     }
@@ -187,6 +189,8 @@ namespace penExtension {
     //% blockId=set pen colour
     //% weight=75
     //% colour.defl=1
+    //% colour.min=0
+    //% colour.max=15
     export function Set_pen_colour_to(colour: number) {
         penColour = colour
     }
